@@ -1,0 +1,123 @@
+\documentclass[xcolor={table}]{beamer}
+\usepackage{pgfgantt}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+
+% Math
+\usepackage{amsmath}
+\DeclareMathOperator\erfc{erfc}
+\usepackage{nicefrac}
+% For tables
+\usepackage{tabularx, booktabs}
+\usepackage{multirow}
+
+% Units
+\usepackage{siunitx}
+\sisetup{
+    exponent-product = \cdot,
+    separate-uncertainty = true,
+    per-mode = symbol,
+    group-digits = false,
+    detect-weight=true,
+    detect-family=true,
+    detect-all
+}
+\DeclareSIUnit{\sqrthz}{\ensuremath{\sqrt{\text{\hertz}}}}
+\DeclareSIUnit{\voltnoise}{\volt\per\sqrthz}
+% Tikz
+\usepackage[europeanresistors,americaninductors, americancurrents, american voltages, siunitx]{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows, calc, automata, positioning, chains, decorations.markings, calc, patterns, angles, quotes}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+\usepackage{graphicx} % Figures/graphics
+\usepackage{float} % Floats, H
+% Subfigures:
+\usepackage[caption=false, font=normalsize, labelfont=sf, textfont=sf]{subfig}
+
+\title{Specialization Project - Weekly meeting}
+\author{Fredrik Feyling}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% ------------------- Since last week ---------------- %
+\begin{frame}
+\frametitle{Since last week}
+\begin{columns}
+
+\column{0.5\textwidth}
+\begin{itemize}
+\item Started writing script for simulating ADC and LNA
+\item Written classes for ADC, LNA and Signal Generator
+\item Function for analysing SNR and plotting PSD
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{TYME_TOT}
+\end{center}
+\end{figure}
+
+\end{columns}
+\end{frame}
+% ---------------
+\begin{frame}
+\frametitle{Since last week}
+\begin{columns}
+
+\column{0.5\textwidth}
+\begin{itemize}
+\item Signal generator adds thermal and flicker noise.
+\begin{itemize}
+    \item Flicker noise function is not accurate yet.
+\end{itemize}
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\linewidth]{PSD}
+\end{center}
+\end{figure}
+
+\end{columns}
+\end{frame}
+
+% ------------------- Timeline ---------------- %
+\begin{frame}
+\frametitle{Timeline}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\linewidth]{gantt}
+\end{center}
+\end{figure}
+\end{frame}
+
+% ------------------- Control Bounded ADC ---------------- %
+\begin{frame}
+\frametitle{Timeline}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\linewidth]{gantt}
+\end{center}
+\end{figure}
+\end{frame}
+
+% ------------------- Specs ---------------- %
+\begin{frame}
+\frametitle{Specs}
+\begin{figure}[htbp]
+\begin{center}
+\input{specs.tex}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+
+\end{document}
